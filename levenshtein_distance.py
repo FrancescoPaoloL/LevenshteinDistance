@@ -1,11 +1,3 @@
-'''
-This script defines a function levenshtein_distance which:
-- takes two strings s and t as inputs 
-- find the minimum number of operations required to transform 
-  the prefix of the first string into the prefix of the second string; and
-- returns an integer representing the Levenshtein distance between them. 
-'''
-
 def levenshtein_distance(s: str, t: str) -> int:   
     # get the length of each string...
     n, m = len(s), len(t)
