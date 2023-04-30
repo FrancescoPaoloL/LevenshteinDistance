@@ -31,9 +31,9 @@ def levenshtein_distance(s: str, t: str) -> int:
                 # insertion, 
                 # deletion, or 
                 # substitution. 
-                delete = d[i-1][j] + 1
-                insert = d[i][j-1] + 1
-                substitute = d[i-1][j-1] + 1
+                delete = 1 + d[i-1][j]
+                insert = 1 + d[i][j-1]
+                substitute = 1 + d[i-1][j-1]
                 d[i][j] = min(delete, insert, substitute)
 
     # return the final value in the matrix, which is the
