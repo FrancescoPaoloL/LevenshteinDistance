@@ -1,38 +1,36 @@
-# The Levenshtein_distance 
-In computational linguistics, the Levenshtein distance, also known as the edit distance, is used to compare the similarity between two words or phrases.
+# The Levenshtein Distance 
 
-The Levenshtein distance is calculated as the minimum number of single-character edits needed to transform one string into the other. In other words, the distance between words refers to the measure of dissimilarity or difference between two words, if we keep in mind that by "similarity" between two words, we mean the resemblance between their spellings, pronunciations, meanings, or contexts.
+In the field of computational linguistics, the Levenshtein distance, also known as the edit distance, is utilized to compare the similarity between two words or phrases.
 
-Here's a simple example to illustrate the concept of distance between words using the Levenshtein distance algorithm.
+The Levenshtein distance between two strings $a$ and $b$, with lengths $|a|$ and $|b|$ respectively, can be calculated using the function $\operatorname{lev}(a, b)$. This function is defined as:
 
-```
-Consider the two words "cat" and "hat". The Levenshtein distance between these two words is 1 because "cat" can be transformed into "hat" by changing the first letter "c" to "h".
+$$
+\operatorname{lev}(a, b) = 
+\begin{cases}
+  |a| & \text{if } |b| = 0 \\
+  |b| & \text{if } |a| = 0 \\
+  \operatorname{lev}\big(\operatorname{tail}(a),\operatorname{tail}(b)\big) & \text{if } a[0] = b[0] \\
+  1 + \min \begin{cases}
+          \operatorname{lev}\big(\operatorname{tail}(a), b\big) \\
+          \operatorname{lev}\big(a, \operatorname{tail}(b)\big) \\
+          \operatorname{lev}\big(\operatorname{tail}(a), \operatorname{tail}(b)\big) \\
+       \end{cases} & \text{otherwise}
+\end{cases}
+$$
 
-This change is equivalent to a single edit operation (a substitution). Therefore, the distance between "cat" and "hat" is 1.
+This is a piecewise function that is defined differently in different parts of its domain. In other words, it's like having multiple functions combined into one.
 
-Similarly, the distance between "cat" and "dog" is 3 because three edit operations 
-(two substitutions and one deletion) are needed to transform "cat" into "dog".
+So, the Levenshtein distance is the minimum number of single-character edits required to transform one string into another. It measures the dissimilarity or difference between two words, where "similarity" is the resemblance between their spellings, pronunciations, meanings, or contexts.
 
-```
+The "distance between words" can be considered as the measure of how many changes are needed to transform one word into another. This can be calculated using various algorithms and techniques depending on the specific application or task.
 
-Other example
+Here are some examples to illustrate the concept of distance between words using the Levenshtein distance algorithm:
 
-```
-The Levenshtein distance between "kitten" and "sitting" is 3, since the following 
-3 edits change one into the other, and there is no way to do it with fewer than 3 edits:
-    1. kitten → sitten (substitution of "s" for "k"),
-    2. sitten → sittin (substitution of "i" for "e"),
-    3. sittin → sitting (insertion of "g" at the end).
-```
+- The Levenshtein distance between "cat" and "hat" is 1 because changing the first letter "c" to "h" is equivalent to a single edit operation (a substitution).
+- The Levenshtein distance between "cat" and "dog" is 3 because three edit operations (two substitutions and one deletion) are required to transform "cat" into "dog".
+- The Levenshtein distance between "kitten" and "sitting" is 3. This is because the following 3 edits change one into the other, and there is no way to do it with fewer than 3 edits: (1) kitten → sitten (substitution of "s" for "k"), (2) sitten → sittin (substitution of "i" for "e"), and (3) sittin → sitting (insertion of "g" at the end).
 
-We can consider the "distance between words" as a measure of how many changes are needed to transform one word into another.
-
-This can be calculated using various algorithms and techniques, depending on the specific application or task.
-
-To do that, we've made a script which defines a function levenshtein_distance which:
-- takes two strings s and t as inputs 
-- find the minimum number of operations required to transform  the prefix of the first string into the prefix of the second string; and
-- returns an integer representing the Levenshtein distance between them. 
+To calculate the Levenshtein distance, a script has been created that defines a function called `levenshtein_distance`. This function takes two strings `s` and `t` as inputs, finds the minimum number of operations required to transform the prefix of the first string into the prefix of the second string, and returns an integer representing the Levenshtein distance between them.
 
 [WIP]
 

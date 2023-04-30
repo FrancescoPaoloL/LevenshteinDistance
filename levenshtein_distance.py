@@ -27,21 +27,14 @@ def levenshtein_distance(s: str, t: str) -> int:
                 d[i][j] = d[i - 1][j - 1]
             else:
                 # If the characters at position i and j don't match, 
-                # we need to consider three possible edit operations: insertion, 
-                # deletion, or substitution. 
-                # To find the minimum number of operations required to transform 
-                # the prefixes up to positions i and j, we take the minimum value 
-                # from one of these entries:
-                #  - the left entry, because represents the number of operations 
-                #    required to transform the prefix up to position i-1 into 
-                #    the prefix up to position j;
-                #  - the above entry, because represents the number [...] 
-                #    to transform the prefix up to position i into the prefix up 
-                #    to position j-1. 
-                #  - The above-left entry represents the number [...] 
-                #    to position i-1 into the prefix up to position j-1
-                # and add 1.
-                d[i][j] = min(d[i - 1][j], d[i][j - 1], d[i - 1][j - 1]) + 1
+                # we need to consider three possible edit operations: 
+                # insertion, 
+                # deletion, or 
+                # substitution. 
+                delete = d[i-1][j] + 1
+                insert = d[i][j-1] + 1
+                substitute = d[i-1][j-1] + 1
+                d[i][j] = min(delete, insert, substitute)
 
     # return the final value in the matrix, which is the
     # Levenshtein Distance between the two input strings
