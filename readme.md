@@ -32,7 +32,22 @@ Here are some examples to illustrate the concept of distance between words using
 
 To calculate the Levenshtein distance, a script has been created that defines a function called `levenshtein_distance`. This function takes two strings `s` and `t` as inputs, finds the minimum number of operations required to transform the prefix of the first string into the prefix of the second string, and returns an integer representing the Levenshtein distance between them.
 
-[WIP]
+<hr>
+
+The Levenshtein distance is a useful tool for detecting fraud. A bank processing a large number of credit card applications can compare new applications to a database of legitimate past applications by calculating the Levenshtein distance. If the distance between a new application and the database exceeds a certain threshold, the bank may suspect fraud and investigate further.
+In fact, fraudulent transactions may have slight variations from genuine ones, and the Levenshtein distance can be used to measure the degree of difference between them.
+
+For example, let's say a new application has the following information:
+
+    Name: John Doe
+    Address: 123 Main St, Anytown USA
+    Income: $50,000
+    Employment: Full-time
+
+The bank calculates the Levenshtein distance between this application and the applications in their database.
+If they find an existing application with the same name, address, and employment information but a significantly different income, it may indicate that the new application is fraudulent and the income information has been falsified.
+
+However, the Levenshtein distance algorithm is not perfect and may sometimes produce false positives or false negatives, depending on the specific use case and the quality of the data. Therefore, it's important to use this algorithm as a tool in conjunction with other techniques and human expertise to ensure accurate and reliable results.
 
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
