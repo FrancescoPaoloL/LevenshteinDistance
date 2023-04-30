@@ -2,18 +2,18 @@
 
 In the field of computational linguistics, the Levenshtein distance, also known as the edit distance, is utilized to compare the similarity between two words or phrases.
 
-The Levenshtein distance between two strings $a$ and $b$, with lengths $|a|$ and $|b|$ respectively, can be calculated using the function $\operatorname{lev}(a, b)$. This function is defined as:
+The Levenshtein distance between two strings $a$ and $b$, with lengths $|a|$ and $|b|$ respectively, can be calculated using the function $\text{lev}(a, b)$. This function is defined as:
 
 $$
-\operatorname{lev}(a, b) = 
+\text{lev}(a, b) = 
 \begin{cases}
   |a| & \text{if } |b| = 0 \\
   |b| & \text{if } |a| = 0 \\
-  \operatorname{lev}\big(\operatorname{tail}(a),\operatorname{tail}(b)\big) & \text{if } a[0] = b[0] \\
+  \text{lev}(\text{tail}(a),\text{tail}(b)) & \text{if } a[0] = b[0] \\
   1 + \min \begin{cases}
-          \operatorname{lev}\big(\operatorname{tail}(a), b\big) \\
-          \operatorname{lev}\big(a, \operatorname{tail}(b)\big) \\
-          \operatorname{lev}\big(\operatorname{tail}(a), \operatorname{tail}(b)\big) \\
+          \text{lev}(\text{tail}(a), b) \\
+          \text{lev}(a, \text{tail}(b)) \\
+          \text{lev}(\text{tail}(a), \text{tail}(b)) \\
        \end{cases} & \text{otherwise}
 \end{cases}
 $$
