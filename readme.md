@@ -49,8 +49,7 @@ If they find an existing application with the same name, address, and employment
 
 However, the Levenshtein distance algorithm is not perfect and may sometimes produce false positives or false negatives, depending on the specific use case and the quality of the data. Therefore, it's important to use this algorithm as a tool in conjunction with other techniques and human expertise to ensure accurate and reliable results.
 
-
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
 
 
 ## Languages and Tools
