@@ -51,7 +51,6 @@ However, the Levenshtein distance algorithm is not perfect and may sometimes pro
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
 
-
 ## Languages and Tools
 <p align="left"> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
 
@@ -59,6 +58,17 @@ However, the Levenshtein distance algorithm is not perfect and may sometimes pro
 ```
 Just Python 3.6.9
 ```
+
+## Test Coverage
+| Name                                   | Stmts | Miss | Branch | BrPart | Cover |
+|----------------------------------------|-------|------|--------|--------|-------|
+| levenshtein_distance.py                 | 21    | 4    | 14     | 1      | 86%   |
+| levenshtein_distanceFinanceFraud.py     | 15    | 3    | 8      | 1      | 74%   |
+| levenshtein_distanceFinanceFraud_test.py| 19    | 1    | 4      | 1      | 91%   |
+| levenshtein_distance_test.py            | 19    | 1    | 4      | 1      | 91%   |
+| **TOTAL**                              | **74**| **9**| **30** | **4**  | **86%**|
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
